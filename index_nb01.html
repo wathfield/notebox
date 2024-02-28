@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Note Application</title>
+    <link rel="stylesheet" href="style_nb01.css">
+</head>
+<body>
+    <div id="app">
+        <div class="header">
+            <button class="button" id="backButton">
+                <a href="all_notes.html" class="button">&lt;</a>
+            </button>
+            <h1>Note_X</h1>
+            <button class="button" id="forwardButton">&gt;</button>
+        </div>
+        <div id="notesContainer" class="notes-container">
+            <!-- Notes will be dynamically populated here -->
+        </div>
+        <div id="notes-container">
+            <!-- Note boxes will be dynamically added here -->
+        </div>
+        <div class="footer">
+            <button id="cameraButton">Camera</button>
+            <button id="microphoneButton">Microphone</button>
+            <button id="textButton">Text</button>
+        </div>
+    </div>
+
+    <script src="script_nb01.js"></script>
+</body>
+</html>

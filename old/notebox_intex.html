@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Note Application</title>
+    <style>
+        /* Styles for rounded blocks */
+        .note-box {
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Styles for buttons */
+        .button {
+            padding: 10px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* Styles for undo button */
+        .undo-button {
+            background-color: #dc3545;
+        }
+
+        /* Styles for navigation arrows */
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navigation">
+        <button class="button">Back</button>
+        <button class="button">Forward</button>
+    </div>
+
+    <div id="notes-container">
+        <!-- Note boxes will be dynamically added here -->
+    </div>
+
+    <button class="button" id="add-note-button">Add Note</button>
+
+    <script>
+        // Function to create a new note box
+        function createNoteBox(type, date, location) {
+            const noteBox = document.createElement('div');
+            noteBox.classList.add('note-box');
+            noteBox.innerHTML = `
+                <div>${type}</div>
+                <div>${date} - ${location}</div>
+            `;
+            return noteBox;
+        }
+
+        // Function to add a new note
+        function addNote() {
+            const notesContainer = document.getElementById('notes-container');
+            const newNoteBox = createNoteBox('Text Note', 'Jan 18, 2024', 'New York');
+            notesContainer.appendChild(newNoteBox);
+        }
+
+        // Event listener for adding a new note
+        document.getElementById('add-note-button').addEventListener('click', addNote);
+    </script>
+</body>
+</html>
